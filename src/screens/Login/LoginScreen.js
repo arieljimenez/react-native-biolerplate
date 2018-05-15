@@ -1,8 +1,8 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
-import PropTypes from "prop-types";
+import { View } from "react-native";
 
 import { Login } from "~/components";
+import { styles } from "~/styles";
 
 export default class LoginScreen extends React.Component {
   constructor(props) {
@@ -13,13 +13,15 @@ export default class LoginScreen extends React.Component {
     };
   }
 
+  static navigationOptions = {
+    header: null
+  };
+
   render() {
-    return <Login />;
+    return (
+      <View style={styles.container}>
+        <Login foo={this.state.foo} navigation={this.props.navigation} />;
+      </View>
+    );
   }
 }
-
-LoginScreen.propTypes = {
-  foo: PropTypes.string.isRequired
-};
-
-const styles = StyleSheet.create({});

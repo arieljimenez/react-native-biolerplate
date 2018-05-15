@@ -1,9 +1,9 @@
 import React from "react";
 
-import { HomeScreen } from "~/screens";
+import { AppNavigator } from "~/screens";
 
 export default class App extends React.Component {
   render() {
-    return <HomeScreen />;
+    return <AppNavigator />;
   }
 }
